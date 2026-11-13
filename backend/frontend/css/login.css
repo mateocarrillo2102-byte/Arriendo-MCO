@@ -1,0 +1,44 @@
+.modo-oscuro {
+    background-color: #222222 !important; /* Asegura el color gris oscuro plano */
+    background-image: none !important;
+    color: #ffffff;
+    .barra {
+        background-color: #1e1e1e;
+        color: #ffffff;
+    }
+    .tarjeta {
+        background-color: #333333;
+        color: #ffffff;
+    }
+    .bloque {
+        background-color: #333333;
+        color: #ffffff;
+    }
+}
+.olvido {
+  align-self: flex-end;
+  font-size: 12px;
+  color: #666;
+  text-decoration: none;
+}
+
+.olvido:hover {
+  text-decoration: underline;
+}
+
+.cambio {
+  margin-top: 18px;
+  font-size: 13px;
+  color: #666;
+}
+
+.cambio a {
+  color: var(--texto);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid var(--amarillo);
+}
+
+.cambio a:hover {
+  background: var(--amarillo);
+}

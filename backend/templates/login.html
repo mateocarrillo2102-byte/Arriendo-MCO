@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Iniciar sesión - Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{url_for ('static', filename='css/login.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/registro.css') }}">
+</head>
+<body class="modo-oscuro">
+  <main class="card">
+    <img class="logo" src="/frontend/images/home-logo-sin-fondo.svg" alt="Logo Home">
+
+    <h1 class="titulo">Unete a nosotros</h1>
+
+    {% with mensajes = get_flashed_messages(with_categories=true) %}
+      {% for categoria, mensaje in mensajes %}
+        <p class="{{ categoria }}" style="color:#c0392b">{{ mensaje }}</p>
+      {% endfor %}
+    {% endwith %}
+
+    <form class="formulario" action="{{ url_for('login') }}" method="post">
+      <input type="email" name="correo" placeholder="Correo electrónico" required>
+      <input type="password" name="contrasena" placeholder="Contraseña" required>
+
+      <a href="#" class="olvido">¿Olvidaste tu contraseña?</a>
+
+      <button type="submit" class="btn">Ingresar</button>
+    </form>
+
+    <p class="cambio">¿No tienes cuenta? <a href="{{ url_for('registro')}}">Regístrate</a></p>
+  </main>
+  <script src="{{ url_for('static', filename='js/tema.js') }}"></script>
+</body>
+</html>
